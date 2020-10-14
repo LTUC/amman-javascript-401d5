@@ -4,9 +4,7 @@ const Input = require('./lib/input.js');
 const HTTP = require('./lib/http.js');
 const mongoose = require('mongoose');
 const MONGODB_URI =
-  process.env.MONGODB_URI ||
-  'mongodb+srv://fatimaz:123456***@cluster0.sddob.mongodb.net/fetch?retryWrites=true&w=majority' ||
-  'mongodb://localhost:27017/fetch';
+  process.env.MONGODB_URI || 'mongodb://localhost:27017/fetch';
 
 mongoose
   .connect(MONGODB_URI, {
