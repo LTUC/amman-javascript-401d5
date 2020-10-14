@@ -1,0 +1,21 @@
+{
+  "name": "mongo-food",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "test-watch":"jest --verbose --coverage --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@code-fellows/supergoose": "^1.0.11",
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.10.9"
+  },
+  "devDependencies": {
+    "jest": "^26.5.3"
+  }
+}

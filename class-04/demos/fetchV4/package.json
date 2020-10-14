@@ -1,0 +1,23 @@
+{
+  "name": "fetch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "test": "jest --coverage --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "is-url": "^1.2.4",
+    "minimist": "^1.2.5",
+    "mongoose": "^5.10.9",
+    "superagent": "^6.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "jest": "^26.5.3"
+  }
+}
