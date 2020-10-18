@@ -1,0 +1,21 @@
+{
+  "categories": [
+    {
+      "name": "hats",
+      "_id": 2
+    },
+    {
+      "name": "test2"
+    }
+  ],
+  "products": [
+    {
+      "name": "s",
+      "category": "cats",
+      "description": "asdasd",
+      "price": 1.99,
+      "inStock": 1,
+      "_id": 1
+    }
+  ]
+}
