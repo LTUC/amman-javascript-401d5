@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 3000;
 const basicAuth = require('./middleware/basic-auth.js');
 const oauth = require('./middleware/oauth.js');
 const bearer = require('./middleware/bearer-auth.js');
+const acl = require('./middleware/acl.js');
 const users = require('./users.js');
 const app = express();
 app.use(express.static('./public'));
@@ -29,5 +30,15 @@ app.get('/users', basicAuth, (req, res) => {
 
 app.get('/user', bearer, (req, res) => {
   res.json(req.user);
+});
+
+app.post('/create', bearer, acl('create'), (req, res) => {
+  res.status(201).send('OK!');
+});
+app.put('/update', bearer, acl('update'), (req, res) => {
+  res.send('OK!');
+});
+app.delete('/delete', bearer, acl('delete'), (req, res) => {
+  res.send('OK!');
 });
 app.listen(PORT, () => console.log('server is running'));

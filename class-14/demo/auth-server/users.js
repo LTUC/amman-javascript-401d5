@@ -6,6 +6,11 @@ const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET || 'mysecret';
 const db = {};
 const users = {};
+const roles = {
+  user: ['read'],
+  editor: ['read', 'create', 'update'],
+  admin: ['read', 'create', 'update', 'delete'],
+};
 /*
 database example
 {
@@ -42,7 +47,10 @@ users.authenticateBasic = async function (user, password) {
 };
 
 users.generateToken = function (user) {
-  const token = jwt.sign({ username: user.username }, SECRET);
+  const token = jwt.sign(
+    { username: user.username, capabilities: roles[user.role] },
+    SECRET
+  );
   return token;
 };
 
